@@ -102,13 +102,19 @@ The output should look like this (NOTE: the actual address will differ on yours)
 
 # 7) Get the [Printer.cfg](https://www.klipper3d.org/Installation.html) file
 
+The Klipper general repository for generic configurations is here https://github.com/Klipper3d/klipper/tree/master/config
 
-
-Klipper general https://github.com/Klipper3d/klipper/tree/master/config
+Our Cr6se V 1.1.0.3 board is idencial in pin out to the 4.5.3 boards
+https://github.com/Klipper3d/klipper/blob/master/config/printer-creality-cr6se-2021.cfg
   
 
 # 8) Initial Startup Checks
 https://docs.vorondesign.com/build/startup/
+
+#9) Get Tuning
+Vorons Anderw Ellis has put together an excellent tuing guide. It will walk you though the steps to gettign your snazzy new printer rockin!
+https://ellis3dp.com/Print-Tuning-Guide/articles/index_tuning.html
+
 
    
 
