@@ -6,9 +6,9 @@ a reminder for a future Klipper install. It was ot very hard once I had all the 
 Definitions
 - [MainsailOS](https://docs.mainsail.xyz/) builds upon Raspberry Pi OS Lite by including Klipper,    Moonraker,and Mainsail into the disc image, making setup quick and Mainsail easier to use with    Klipper and Moonraker.
 
-- [Klipper](https://www.klipper3d.org/) is a 3d-Printer firmware. It combines the power of general purpose computer with one or more micro-controllers
+  - [Klipper](https://www.klipper3d.org/) is a 3d-Printer firmware. It combines the power of general purpose computer with one or more micro-controllers
 
-- [Moonraker](https://moonraker.readthedocs.io/en/latest/) is a Python 3 based web server that exposes APIs with which client applications may use to interact with the 3D printing firmware Klipper.
+  - [Moonraker](https://moonraker.readthedocs.io/en/latest/) is a Python 3 based web server that exposes APIs with which client applications may use to interact with the 3D printing firmware Klipper.
 
 - [Raspberry Pi Imager](https://www.raspberrypi.com/software/) is the quick and easy way to install Raspberry Pi OS and other operating systems to a microSD card, ready to use with your Raspberry
 
@@ -16,28 +16,31 @@ Definitions
 
 - [Printer.cfg](https://www.klipper3d.org/Installation.html)Most Klipper settings are determined by a "printer configuration file" that will be stored on the Raspberry Pi. An appropriate configuration file can often be found by looking in the Klipper config directory for a file starting with a "printer-" prefix that corresponds to the target printer. The Klipper configuration file contains technical information about the printer that will be needed during the installation.
 
+https://github.com/KoenVanduffel/CR-6_Klipper
+
 
 
 
 # 1) Download Mainsial OS [offical instructions](https://docs.mainsail.xyz/setup/mainsailos/pi-imager)
   
-     - Download the latest Raspbery Pi Imager https://www.raspberrypi.com/software/
-        The Pi imager allows you to burn pre made operating systems ready to expand on your Raspberry pi
+- Download the latest [Raspberry Pi Imager](https://www.raspberrypi.com/software/)  
+
  - Select “CHOOSE OS”, 
    - Scroll down to “Other specific-purpose OS”
    - Select “3D printing”
    - Choose Mainsail OS
       - Choose Storage (Micro SD Card)
-        - Click the Settings gear
-        - Enable SSH!!!!!
-        - Add your Hostname
-        - Wi-Fi login
-        - Change your password
-        - Language etc
-        - Click Write
+          - Click the Settings gear
+          - Enable SSH!!!!!
+          - Add your Hostname
+          - Wi-Fi login
+          - Change your password
+          - Language etc
+       - Click Write
  # 2) Expand Mainsail OS
    We are goign to expand the Mainsial OS and create a Firmware.bin file which will be 
-   used to flash Klipper to your printers mainboard
+   used to flash Klipper to your printers mainboard.
+   
   - Insert the burned SD card from Step 1 in you Raspberry Pi and turn it on
   Type the commands Below
   
@@ -49,12 +52,16 @@ Definitions
        
 A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 boards)    
 
-    - select microcontroller - "STM32"
-    - processor model "STM32F103" (is the default)
-    - Bootloader - "28KiB"
-    - Communication interface "Serial (on USART1 PA10/PA9)"
-   Enter "Q" to save and quit
-   Use the make commands to create the Klipper.Bin file which will be used to flash the printer main board. It will be place in the pi directory /home/pi/klipper/out/
+ - select microcontroller - "STM32"
+ - processor model "STM32F103" 
+ - Bootloader - "28KiB"
+ - Communication interface "Serial (on USART1 PA10/PA9)"
+ ```Enter "Q" to save and quit```
+   
+   Use the [make](https://forums.raspberrypi.com/viewtopic.php?t=75648) command to create the Klipper.Bin file which will be used to flash the printer main board. It will be placed in the pi directory /home/pi/klipper/out/
+   ```
+   make
+   ```
   
 # 3) FTP the Klipper.bin
 Next use and FTP service to extract the Klipper.bin file from the Pi directory 
