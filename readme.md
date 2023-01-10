@@ -44,8 +44,20 @@ https://github.com/KoenVanduffel/CR-6_Klipper
  # 2) Expand Mainsail OS
    We are goign to expand the Mainsial OS and create a Firmware.bin file which will be 
    used to flash Klipper to your printers mainboard.
-   
+  
   - Insert the burned SD card from Step 1 in you Raspberry Pi and turn it on
+  - Log into your Router to find the Pi IP address. (Easy way) 
+    -It will show up as the ```Hostname``` you gave it 
+    
+    - You lost your router address;    
+         Step 1: Step 1: Use the search bar at the bottom of screen for ```cmd```and hit ```ENTER```to launch the command prompt. Step 3: Right inside the command prompt, type in ```ipconfig```and hit ```Enter```. The number assigned to ```Default Gateway``` is your router's IP address
+  
+ - Look up the IP address with a screen pluged into the PI;
+   - Enter the command ```hostname -I``` in the terminal.Your Pi’s IP address is the first part of the output: it will contain four numbers separated by periods, like so: 192.xx.x.x. My Pi 3 lists both Lan and Wifi IP numbers```
+         
+ - Open [PuTTY](https://www.putty.org/) and SSH into the Pi using ```Port 22```        
+         
+  
   Type the commands Below
   
   ``` 
@@ -71,17 +83,19 @@ A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 bo
 # 3) FTP the Klipper.bin
 Next use an FTP service to extract the Klipper.bin file from the Pi directory 
 I used [FileZilla](https://filezilla-project.org/) with port 22 selected on the SSH connection.
-  - Navigate to /home/pi/klipper/out/ and copy the Klipper.bin file to your PC
+  - Navigate to ```/home/pi/klipper/out/``` and copy the Klipper.bin file to your PC
 
 # 4) Format your SD Card 
 ```In order to flash the firmware to you main board you must formatt the SD card with the settings below. I used an 8 gig card with sucess```
+- Right click on the drive and select ```format```
+  -This option is not avialable from windows 10 quick access!
 
 #  The SDcard used to flash the motherboard MUST be formatted as FAT32 with 4096 bits sector size.
 
 # 5) Load the Firmware onto the Printer
 Next we are going to flash the firmware on the printers main board
   - Rename the Klipper.bin file to Firmware.bin
-  - Drag onto your newly Formatted SD card from Step #4
+  - Copy the file onto your newly Formatted SD card from Step #4
   - Insert into the printer and boot several times
     - The touch screen should freeze if it continiues to boot it did not work. Try again with a         differnt card. An 8 gig card worked well for me. The printer is pickey with SD card too           big or small causes issues. 
 
