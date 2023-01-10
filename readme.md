@@ -16,27 +16,31 @@ Definitions
 
 - [Printer.cfg](https://www.klipper3d.org/Installation.html)Most Klipper settings are determined by a "printer configuration file" that will be stored on the Raspberry Pi. An appropriate configuration file can often be found by looking in the Klipper config directory for a file starting with a "printer-" prefix that corresponds to the target printer. The Klipper configuration file contains technical information about the printer that will be needed during the installation.
 
+- [PuTTY](https://www.putty.org/) is an SSH and telnet client. This allows you to use the terminal of your Raspberry Pi from your PC. 
+
+- [FileZilla](https://filezilla-project.org/) is a free, open source file transfer protocol (FTP) software tool that allows users to set up FTP servers or connect to other FTP servers in order to exchange files. FileZilla traditionally supported File Transfer Protocol over Transport Layer Security (FTPS).
+
+The Main guide that outlines all these steps. This Document just outlines and highlight the process in my own non programer words. 
 https://github.com/KoenVanduffel/CR-6_Klipper
-
-
 
 
 # 1) Download Mainsial OS [offical instructions](https://docs.mainsail.xyz/setup/mainsailos/pi-imager)
   
 - Download the latest [Raspberry Pi Imager](https://www.raspberrypi.com/software/)  
 
- - Select “CHOOSE OS”, 
-   - Scroll down to “Other specific-purpose OS”
-   - Select “3D printing”
-   - Choose Mainsail OS
-      - Choose Storage (Micro SD Card)
-          - Click the Settings gear
-          - Enable SSH!!!!!
-          - Add your Hostname
-          - Wi-Fi login
-          - Change your password
-          - Language etc
-       - Click Write
+ - Select ```CHOOSE OS``` 
+   - Scroll down to ```Other specific-purpose OS```
+   - Select ```3D printing```
+   - Choose ```Mainsail OS```
+      - Choose Storage ```(Micro SD Card)```
+      - Click the ```Settings gear```
+          - ```Enable SSH !!!!!```
+          - ```Add your Hostname```
+          - ```Wi-Fi login```
+          - ```Change your password```
+          - ```Language etc```
+      - Click ```Write```
+      
  # 2) Expand Mainsail OS
    We are goign to expand the Mainsial OS and create a Firmware.bin file which will be 
    used to flash Klipper to your printers mainboard.
@@ -52,10 +56,11 @@ https://github.com/KoenVanduffel/CR-6_Klipper
        
 A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 boards)    
 
- - select microcontroller - "STM32"
- - processor model "STM32F103" 
- - Bootloader - "28KiB"
- - Communication interface "Serial (on USART1 PA10/PA9)"
+ - select microcontroller - ```STM32```
+ - processor model ```STM32F103```
+ - Bootloader - ```28KiB```
+ - Communication interface Serial ```USART1 PA10/PA9)```
+ 
  ```Enter "Q" to save and quit```
    
    Use the [make](https://forums.raspberrypi.com/viewtopic.php?t=75648) command to create the Klipper.Bin file which will be used to flash the printer main board. It will be placed in the pi directory /home/pi/klipper/out/
@@ -64,12 +69,12 @@ A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 bo
    ```
   
 # 3) FTP the Klipper.bin
-Next use and FTP service to extract the Klipper.bin file from the Pi directory 
-I used [FileZilla](https://filezilla-project.org/) with port 22 selected.
+Next use an FTP service to extract the Klipper.bin file from the Pi directory 
+I used [FileZilla](https://filezilla-project.org/) with port 22 selected on the SSH connection.
   - Navigate to /home/pi/klipper/out/ and copy the Klipper.bin file to your PC
 
 # 4) Format your SD Card 
-In order to flash the firmware to you main board you must formatt the SD card with the settings below. I used an 8 gig card with sucess
+```In order to flash the firmware to you main board you must formatt the SD card with the settings below. I used an 8 gig card with sucess```
 
 #  The SDcard used to flash the motherboard MUST be formatted as FAT32 with 4096 bits sector size.
 
@@ -81,7 +86,7 @@ Next we are going to flash the firmware on the printers main board
     - The touch screen should freeze if it continiues to boot it did not work. Try again with a         differnt card. An 8 gig card worked well for me. The printer is pickey with SD card too           big or small causes issues. 
 
 # 6) Get the USB connection address
-This step gets the proper USB connection address from the PI. This will be used in you Print.cfg file (used in step 7) 
+This step gets the proper USB connection address from the PI. This will be used in you Printer.cfg file (used in step 7) 
 
  - Connect to you Pi Via SSH using [Putty](https://putty.org/) with Port 22
 
@@ -91,15 +96,19 @@ This step gets the proper USB connection address from the PI. This will be used 
 
 The output should look like this (NOTE: the actual address will differ on yours):
 
-   ```
-   /dev/serial/by-id/usb-Klipper_stm32f103xe_36FFD8054255373740662057-if00
-   ```
+   ```/dev/serial/by-id/usb-Klipper_stm32f103xe_36FFD8054255373740662057-if00```
    
-- Replace the placeholder string in the [mcu] section of print.cfg with actual output string displayed in your terminal. Which we will get in the next step
+- Replace the placeholder string in the [mcu] section of [Printer.cfg](https://www.klipper3d.org/Installation.html) with actual output string displayed in your terminal. Which we will get in the next step
 
-# 7) Get the Print.cfg file
+# 7) Get the [Printer.cfg](https://www.klipper3d.org/Installation.html) file
 
-https://www.klipper3d.org/Config_checks.html
+
+
+Klipper general https://github.com/Klipper3d/klipper/tree/master/config
+  
+
+# 8) Initial Startup Checks
+https://docs.vorondesign.com/build/startup/
 
    
 
