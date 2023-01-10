@@ -14,7 +14,7 @@ a reminder for a future Klipper install. It was ot very hard once I had all the 
               - Choose Mainsail OS
                 - Choose Storage (Micro SD Card)
           - Click the Settings gear
-            - Enable SSH
+            - Enable SSH!!!!!
             - Add your Hostname
             - Wi-Fi login
             - Change your password
@@ -32,13 +32,41 @@ a reminder for a future Klipper install. It was ot very hard once I had all the 
     make menuconfig 
   ```  
        
-A GUI configuration will open up selcted the following     
+A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 boards)    
 
     - select microcontroller - "STM32"
     - processor model "STM32F103" (is the default)
     - Bootloader - "28KiB"
     - Communication interface "Serial (on USART1 PA10/PA9)"
    Enter "Q" to save and quit
+   Use the make commands to create the Klipper.Bin file which will be used to flash the printer main board. It will be place in the pi directory /home/pi/klipper/out/
+  
+# 3) FTP the Klipper.bin
+Next use and FTP service to extract the Klipper.bin file from the Pi directory 
+I used [FileZilla](https://filezilla-project.org/) with port 22 selected.
+  - Navigate to /home/pi/klipper/out/ and copy the Klipper.bin file to your PC
+
+# 4) Format your SD Card 
+In order to flash the firmware to you main board you must formatt the SD card with the settings below. I used an 8 gig card with sucess
+
+#  The SDcard used to flash the motherboard MUST be formatted as FAT32 with 4096 bits sector size.
+
+# 5) Load the Firmware onto the Printer
+Next we are going to flash the firmware on the printers main board
+  - Rename the Klipper.bin file to Firmware.bin
+  - Drag onto your newly Formatted SD card from Step #4
+  - Insert into the printer and boot several times
+    - The touch screen should freeze if it continiues to boot it did not work. Try again with a         differnt card. An 8 gig card worked well for me. The printer is pickey with SD card too           big or small causes issues. 
+
+# 6) Get the USB connection address
+This step gets the proper USB connection address from the PI. This will be used in you Printer.CFG file
+
+   ```ls /dev/serial/by-id/*```
+
+the output should look like this (NOTE: the actual address will differ on yours):
+
+   ```/dev/serial/by-id/usb-Klipper_stm32f103xe_36FFD8054255373740662057-if00```
+
    
 
      
