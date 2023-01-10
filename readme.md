@@ -59,13 +59,25 @@ Next we are going to flash the firmware on the printers main board
     - The touch screen should freeze if it continiues to boot it did not work. Try again with a         differnt card. An 8 gig card worked well for me. The printer is pickey with SD card too           big or small causes issues. 
 
 # 6) Get the USB connection address
-This step gets the proper USB connection address from the PI. This will be used in you Printer.CFG file
+This step gets the proper USB connection address from the PI. This will be used in you Print.cfg file (used in step 7) 
 
-   ```ls /dev/serial/by-id/*```
+ - Connect to you Pi Via SSH using [Putty](https://putty.org/) with Port 22
 
-the output should look like this (NOTE: the actual address will differ on yours):
+   ```
+   ls /dev/serial/by-id/*
+   ```
 
-   ```/dev/serial/by-id/usb-Klipper_stm32f103xe_36FFD8054255373740662057-if00```
+The output should look like this (NOTE: the actual address will differ on yours):
+
+   ```
+   /dev/serial/by-id/usb-Klipper_stm32f103xe_36FFD8054255373740662057-if00
+   ```
+   
+- Replace the placeholder string in the [mcu] section of print.cfg with actual output string displayed in your terminal. Which we will get in the next step
+
+# 7) Get the Print.cfg file
+
+https://www.klipper3d.org/Config_checks.html
 
    
 
