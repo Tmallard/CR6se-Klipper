@@ -20,13 +20,27 @@ a reminder for a future Klipper install. It was ot very hard once I had all the 
             - Change your password
             - Language etc
           - Click Write
- # 2) Expand Mainsail os
+ # 2) Expand Mainsail OS
    We are goign to expand the Mainsial OS and create a Firmware.bin file which will be 
    used to flash Klipper to your printers mainboard
   - Insert the burned SD card from Step 1 in you Raspberry Pi and turn it on
-     ```sudo raspi-config
-     - set a new password (option 1, S3), optionally change the system name ```
-  - sudo reboo
+  Type the commands Below
+  
+  ``` 
+    cd klipper
+    sudo service klipper stop
+    make menuconfig 
+  ```  
+       
+A GUI configuration will open up selcted the following     
+
+    - select microcontroller - "STM32"
+    - processor model "STM32F103" (is the default)
+    - Bootloader - "28KiB"
+    - Communication interface "Serial (on USART1 PA10/PA9)"
+   Enter "Q" to save and quit
+   
+
      
  
   
