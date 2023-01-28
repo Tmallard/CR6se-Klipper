@@ -138,7 +138,14 @@ git clone https://github.com/th33xitus/kiauh.git
 -To execte Kiauh use the command below
 ```
 ./kiauh/kiauh.sh
+
 ```
+# 9 Adaptive Bed mesh
+()https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging
+# 10 Object Exclude
+https://www.klipper3d.org/Exclude_Object.html
+#11 import temp settins for start file 
+
 
   
 
