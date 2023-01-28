@@ -19,6 +19,9 @@ Definitions
 - [PuTTY](https://www.putty.org/) is an SSH and telnet client. This allows you to use the terminal of your Raspberry Pi from your PC. 
 
 - [FileZilla](https://filezilla-project.org/) is a free, open source file transfer protocol (FTP) software tool that allows users to set up FTP servers or connect to other FTP servers in order to exchange files. FileZilla traditionally supported File Transfer Protocol over Transport Layer Security (FTPS).
+- [KIAUH](https://www.lpomykal.cz/kiauh-installation-guide/)
+is an awesome Klipper installation and update helper. It shows you Klipper installation, features and helps with the whole installation process
+
 
 The Main guide that outlines all these steps. This Document just outlines and highlight the process in my own non programer words. 
 https://github.com/KoenVanduffel/CR-6_Klipper
@@ -120,6 +123,23 @@ The Klipper general repository for generic configurations is here https://github
 
 Our Cr6se V 1.1.0.3 board is idencial in pin out to the 4.5.3 boards
 https://github.com/Klipper3d/klipper/blob/master/config/printer-creality-cr6se-2021.cfg
+
+
+# [8 Install KIAUH and GIT](https://www.lpomykal.cz/kiauh-installation-guide/)
+- GIT installation Use this command to install git:
+```
+sudo apt-get install git -y
+```
+- Install KIAUH now that you are connected to GIT
+```
+cd ~
+git clone https://github.com/th33xitus/kiauh.git
+```
+-To execte Kiauh use the command below
+```
+./kiauh/kiauh.sh
+```
+
   
 
 # 8) Initial Startup Checks
