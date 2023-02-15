@@ -140,19 +140,19 @@ git clone https://github.com/th33xitus/kiauh.git
 ./kiauh/kiauh.sh
 
 ```
-# 9 Adaptive Bed mesh
-()https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging
-# 10 Object Exclude
+# 9 Object Exclude
 https://www.klipper3d.org/Exclude_Object.html
+
+# 10 Adaptive Bed mesh
+()https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging
+
 #11 import temp settins for start file 
-
-
   
 
-# 8) Initial Startup Checks
+# 12) Initial Startup Checks
 https://docs.vorondesign.com/build/startup/
 
-#9) Get Tuning
+#13) Get Tuning
 Vorons Anderw Ellis has put together an excellent tuing guide. It will walk you though the steps to gettign your snazzy new printer rockin!
 https://ellis3dp.com/Print-Tuning-Guide/articles/index_tuning.html
 
