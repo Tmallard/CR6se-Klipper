@@ -143,6 +143,19 @@ git clone https://github.com/th33xitus/kiauh.git
 ```
 # 9 Object Exclude
 https://www.klipper3d.org/Exclude_Object.html
+https://www.youtube.com/watch?v=QTwRZ_M159Q
+
+Update to Vesion or better
+     Klipper: v0.10.0.438
+     Moonraker: v0.7.1.445
+     Mainsail: v2.1.0
+     
+Copy\Paste For Exclude Module:
+Add to Printer.CFG at the top ```[exclude_object]```
+
+Open ```Moonraker.conf``` 
+Look for [file_manager] Add Line below
+```enable_object_processing: True```
 
 # 10 Adaptive Bed mesh
 ()https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging
