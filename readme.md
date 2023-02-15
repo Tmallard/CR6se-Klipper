@@ -52,7 +52,7 @@ https://github.com/KoenVanduffel/CR-6_Klipper
   - Log into your Router to find the Pi IP address. (Easy way) 
     -It will show up as the ```Hostname``` you gave it 
     
-    - You lost your router address;    
+    - You lost your router address?    
          Step 1: Step 1: Use the search bar at the bottom of screen for ```cmd```and hit ```ENTER```to launch the command prompt. Step 3: Right inside the command prompt, type in ```ipconfig```and hit ```Enter```. The number assigned to ```Default Gateway``` is your router's IP address
   
  - Look up the IP address with a screen pluged into the PI;
@@ -84,7 +84,7 @@ A GUI configuration will open up selcted the following (For 4.5.3 and 1.0.1.3 bo
    ```
   
 # 3) FTP the Klipper.bin
-Next use an FTP service to extract the Klipper.bin file from the Pi directory 
+Next use an FTP service to extract the ```Klipper.bin``` file from the Pi directory 
 I used [FileZilla](https://filezilla-project.org/) with port 22 selected on the SSH connection.
   - Navigate to ```/home/pi/klipper/out/``` and copy the Klipper.bin file to your PC
 
@@ -97,10 +97,11 @@ I used [FileZilla](https://filezilla-project.org/) with port 22 selected on the 
 
 # 5) Load the Firmware onto the Printer
 Next we are going to flash the firmware on the printers main board
-  - Rename the Klipper.bin file to Firmware.bin
+  - Rename the ```Klipper.bin``` file to ```Firmware.bin```
   - Copy the file onto your newly Formatted SD card from Step #4
   - Insert into the printer and boot several times
     - The touch screen should freeze if it continiues to boot it did not work. Try again with a         differnt card. An 8 gig card worked well for me. The printer is pickey with SD card too           big or small causes issues. 
+    - The Cr6 was very picky with SD Cards I had Success using this one
 
 # 6) Get the USB connection address
 This step gets the proper USB connection address from the PI. This will be used in you Printer.cfg file (used in step 7) 
