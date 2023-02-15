@@ -160,6 +160,14 @@ Look for [file_manager] Add Line below
 # 10 Adaptive Bed mesh
 ()https://github.com/kyleisah/Klipper-Adaptive-Meshing-Purging
 
+# 11 Connect Camera
+   - Update Crows Nest
+   - Click Gear Icon
+      - Select Webcame
+      - Name New Webcam
+      - Save and Resart Crows Nest
+      - Reboot Pi if not connecting 
+
 #11 import temp settins for start file 
   
 
