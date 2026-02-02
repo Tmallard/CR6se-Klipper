@@ -178,6 +178,9 @@ https://docs.vorondesign.com/build/startup/
 Vorons Anderw Ellis has put together an excellent tuing guide. It will walk you though the steps to gettign your snazzy new printer rockin!
 https://ellis3dp.com/Print-Tuning-Guide/articles/index_tuning.html
 
+#13) Setup Start Macro 
+https://github.com/jontek2/A-better-print_start-macro?fbclid=IwY2xjawPt0CBleHRuA2FlbQIxMABicmlkETFZZnd5RE9YR1NsVE90T3dCc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHnA_0UjNxzXgVWkLYgs4s__OGw_c65s0N6W5DR0u-GcPAM00wX_lt0G55sHC_aem_iehBM6uhEbFNeWtmTZBO_w
+
 
    
 
